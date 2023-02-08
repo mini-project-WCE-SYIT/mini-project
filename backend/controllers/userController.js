@@ -22,7 +22,7 @@ const login = async(req,res) => {
         throw new customError.NotFoundError(`No user with id ${username}`);
     }
     else if(!(user.password === password)){
-        res.json({msg : 'Incorrect username or password'});
+        res.status(400).json({msg : 'Incorrect username or password'});
     }
     else{
         res.status(StatusCodes.OK).json({ msg: 'Successfully logged in' }); 
