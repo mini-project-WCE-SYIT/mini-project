@@ -12,10 +12,11 @@ body {
   background-color: #edf4fc;
 }
 
-.login-form>h2 {
+.login-form > h2 {
   margin-top: 3rem;
   margin-bottom: 3rem;
   font-weight: 400;
+  text-align: center;
 }
 
 .form {
@@ -34,7 +35,7 @@ body {
   background: #ffffff;
 }
 
-.form>h2 {
+.form > h2 {
   margin: 0px;
   font-weight: 500;
   padding: 0;
@@ -49,18 +50,18 @@ body {
   margin-bottom: 1rem; */
 }
 
-.innerDiv>input {
+.innerDiv > input {
   border-radius: 0.5rem;
   height: 2rem;
   border: 0.1rem solid rgb(157, 186, 249);
 }
 
-.innerDiv>input:hover {
+.innerDiv > input:hover {
   background-color: #d7e7f8;
 }
 
 /* incomplete task */
-.innerDiv>input:active {
+.innerDiv > input:active {
   background-color: #d7e7f8;
   border: 0.1rem solid rgb(126, 167, 255);
 }
@@ -84,7 +85,7 @@ body {
   cursor: pointer;
 }
 
-.innerDiv>input {
+.innerDiv > input {
   font-size: 1rem;
   padding: 0.3rem;
   border-radius: 12px;
@@ -114,11 +115,12 @@ body {
   color: rgb(36, 36, 187);
 }
 
-.head>h1 {
+.head > h1 {
   font-weight: 400;
+  text-align: center;
 }
 
-.procedure{
+.procedure {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -129,7 +131,7 @@ body {
   background-color: #d7e7f8;
 }
 
-.DOCUMENTS{
+.DOCUMENTS {
   border-radius: 1.3rem;
   background-color: #edf4fc;
   padding: 2rem;
@@ -139,13 +141,13 @@ body {
   flex-wrap: wrap;
 }
 
-.procedure>h2{
+.procedure > h2 {
   padding-top: 1.5rem;
   margin-top: 1rem;
   text-align: center;
 }
 
-.proceed{
+.proceed {
   font-size: 1.3rem;
   width: 6rem;
   text-align: center;
@@ -187,14 +189,45 @@ body {
   cursor: pointer;
 }
 
-.btns{
+.btns {
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-@media only screen and (max-width: 65s0px) {
-  .btns>div{
+@media only screen and (max-width: 680px) {
+  .btns > div {
     display: none;
+  }
+  .head > h1 {
+    font-size: 2rem;
+  }
+  .login-form > h2 {
+    font-size: 1.5rem;
+  }
+  .form > h2 {
+    font-size: 1.4rem;
+  }
+  .innerDiv > label,
+  .innerDiv > input {
+    font-size: 1.1rem;
+  }
+  .forgotpassword {
+    font-size: 1.08rem;
+  }
+}
+
+@media only screen and (max-width: 485px) {
+  .form {
+    width: 13rem;
+  }
+  .head > h1 {
+    font-size: 1.8rem;
+  }
+  .innerDiv {
+    margin-left: 1rem;
+  }
+  .innerDiv > input {
+    width: 90%;
   }
 }
