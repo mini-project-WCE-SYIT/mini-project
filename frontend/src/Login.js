@@ -1,7 +1,7 @@
-import ReactDom from 'react-dom'
-import './index.css'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import axios from 'axios';
+import './index.css'
 // import axios from 'axios'
 
 const Login = () => {
@@ -10,6 +10,8 @@ const Login = () => {
   const URL = 'http://localhost:5000/api/v1/user/login'
   const [error, setError] = useState('')
   const data = {username,password};
+  const navigate = useNavigate();
+  
   const fetchData = async(URL) =>{
     try{
       await axios({
@@ -19,10 +21,11 @@ const Login = () => {
       }).then((res) => {
         console.log(res.data)
         setError(res.data.msg);
+        navigate('/home')
       });
     }catch(err){
       console.log(err);
-      setError(err.msg)
+      setError('Incorrect username or password')
     }
 
   }
