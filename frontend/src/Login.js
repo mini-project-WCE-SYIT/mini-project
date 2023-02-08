@@ -1,15 +1,35 @@
 import ReactDom from 'react-dom'
 import './index.css'
 import React, { useState, useEffect } from 'react'
+import axios from 'axios';
 // import axios from 'axios'
 
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const URL = 'http://localhost:5000/api/v1/user/login'
   const [error, setError] = useState('')
+  const data = {username,password};
+  const fetchData = async(URL) =>{
+    try{
+      await axios({
+        method: 'POST',
+        url: URL,
+        data
+      }).then((res) => {
+        console.log(res.data)
+        setError(res.data.msg);
+      });
+    }catch(err){
+      console.log(err);
+      setError(err.msg)
+    }
+
+  }
   const handleSubmit = (e) => {
     e.preventDefault()
-    setError('Invalid username or password. Please try again.')
+    console.log(username,password);
+    fetchData(URL);
   }
   return (
     <>
