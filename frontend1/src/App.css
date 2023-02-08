@@ -12,11 +12,12 @@ body {
   background-color: #edf4fc;
 }
 
-.login-form > h2 {
+.login-form>h2 {
   margin-top: 3rem;
   margin-bottom: 3rem;
   font-weight: 400;
 }
+
 .form {
   border: 5px solid #d7e7f8;
   padding: 4rem;
@@ -33,7 +34,7 @@ body {
   background: #ffffff;
 }
 
-.form > h2 {
+.form>h2 {
   margin: 0px;
   font-weight: 500;
   padding: 0;
@@ -48,18 +49,18 @@ body {
   margin-bottom: 1rem; */
 }
 
-.innerDiv > input {
+.innerDiv>input {
   border-radius: 0.5rem;
   height: 2rem;
-  border: 0.1rem solid rgb(126, 167, 255);
+  border: 0.1rem solid rgb(157, 186, 249);
 }
 
-.innerDiv > input:hover {
+.innerDiv>input:hover {
   background-color: #d7e7f8;
 }
 
 /* incomplete task */
-.innerDiv > input:active {
+.innerDiv>input:active {
   background-color: #d7e7f8;
   border: 0.1rem solid rgb(126, 167, 255);
 }
@@ -83,12 +84,13 @@ body {
   cursor: pointer;
 }
 
-.innerDiv > input {
+.innerDiv>input {
   font-size: 1rem;
   padding: 0.3rem;
   border-radius: 12px;
   background: #ffffff;
 }
+
 .head {
   display: flex;
   flex-direction: column;
@@ -112,6 +114,87 @@ body {
   color: rgb(36, 36, 187);
 }
 
-.head > h1 {
-  font-weight: 500;
+.head>h1 {
+  font-weight: 400;
+}
+
+.procedure{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 3rem;
+  font-size: 1.3rem;
+  background-color: #d7e7f8;
+}
+
+.DOCUMENTS{
+  border-radius: 1.3rem;
+  background-color: #edf4fc;
+  padding: 2rem;
+  box-shadow: 8px 10px rgba(136, 136, 136, 0.2);
+  line-height: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.procedure>h2{
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.proceed{
+  font-size: 1.3rem;
+  width: 6rem;
+  text-align: center;
+  justify-content: center;
+  background-color: #f43d3d;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 1.7rem;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+.proceed:hover {
+  background-color: #f85d5d;
+  cursor: pointer;
+}
+.download {
+  font-size: 1.3rem;
+  width: 10.5rem;
+  float: right;
+  justify-content: right;
+  background-color: #068c39;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 1.7rem;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.download:hover {
+  background-color: #f45050;
+  cursor: pointer;
+}
+
+.btns{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+@media only screen and (max-width: 65s0px) {
+  .btns>div{
+    display: none;
+  }
 }
