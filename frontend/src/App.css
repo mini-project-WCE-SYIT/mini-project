@@ -148,44 +148,46 @@ body {
 }
 
 .proceed {
-  font-size: 1.3rem;
-  width: 6rem;
+  font-size: 1.6rem;
   text-align: center;
-  justify-content: center;
-  background-color: #f43d3d;
+  background-color: #07a243;
   border: none;
-  padding: 0.5rem;
+  padding: 0.7rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
   border-radius: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   margin-top: 1.7rem;
   color: white;
-  font-weight: bold;
+  font-weight: 500;
   text-decoration: none;
+  transition: all 0.2s;
 }
 .proceed:hover {
-  background-color: #f85d5d;
+  margin-top: 1.6rem;
+  margin-bottom: 0.1rem;
+  box-shadow: 5px 6px rgba(136, 136, 136, 0.2);
   cursor: pointer;
 }
 .download {
-  font-size: 1.3rem;
-  width: 10.5rem;
-  float: right;
-  justify-content: right;
-  background-color: #068c39;
+  font-size: 1.5rem;
+  background-color: #0317d1;
   border: none;
-  padding: 0.5rem;
+  padding: 0.7rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
   border-radius: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
   margin-top: 1.7rem;
   color: white;
-  font-weight: bold;
+  font-weight: 500;
   text-decoration: none;
 }
 
 .download:hover {
-  background-color: #f45050;
+  margin-top: 1.6rem;
+  margin-bottom: 0.1rem;
+  box-shadow: 5px 6px rgba(136, 136, 136, 0.2);
   cursor: pointer;
 }
 
@@ -214,6 +216,28 @@ body {
   }
   .forgotpassword {
     font-size: 1.08rem;
+  }
+  .procedure {
+    padding: 2.2rem;
+  }
+  .procedure > h2 {
+    font-size: 1.5rem;
+  }
+  .DOCUMENTS {
+    font-size: 1rem;
+    line-height: 1.9rem;
+    padding: 1.2rem;
+    padding-right: 1.5rem;
+  }
+  .DOCUMENTS > p {
+    margin-left: 3rem;
+  }
+  .proceed,
+  .download {
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
   }
 }
 
