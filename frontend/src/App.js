@@ -3,7 +3,7 @@ import Login from './Login'
 import Procedure from './Procedure'
 function App() {
   return (
-  <Login />
+  <Login/>
   )
 }
 
