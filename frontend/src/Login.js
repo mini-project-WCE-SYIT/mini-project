@@ -7,7 +7,7 @@ import './index.css'
 const Login = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const URL = 'http://localhost:5000/api/v1/user/login'
+  const URL = 'https://wce-transcript-backend.onrender.com/api/v1/user/login'
   const [error, setError] = useState('')
   const data = {username,password};
   const navigate = useNavigate();
