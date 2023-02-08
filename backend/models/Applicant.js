@@ -51,7 +51,31 @@ const applicantSchema = new mongoose.Schema({
     },
     fees:{
         type:Number
-    }
+    },
+    role:{
+        type:String,
+        enum:['admin','user'],
+        default: 'user'
+    },
+    ReportDetails:[
+        {
+            imageURL:{
+                type: String,
+                required: [true,'please provide a image']
+            },
+            yearSem:{
+                type: String,
+                required: [true,'please provide year and sem']
+            },
+        }
+    ]
 });
+
+
+applicantSchema.methods.addReportDetails = function(imageURL,yearSem){
+    this.ReportDetails.push({imageURL,yearSem});
+    return this.save();
+}
+
 
 module.exports = mongoose.model("Applicant", applicantSchema);
