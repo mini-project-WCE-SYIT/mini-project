@@ -1,18 +1,18 @@
 const User = require('../models/User');
 const customError = require('../errors')
 const {StatusCodes}  = require('http-status-codes');
+const catchAsync = require('../middlewares/catchAsync');
 
-
-const createUser = async(req,res)=>{
+const createUser = catchAsync(async(req,res,next)=>{
     const {username,password} = req.body;
     if(!username || !password){
-        throw new customError.BadRequestError('Please provide the credentials');
+      throw new customError.BadRequestError('Please provide the credentials');
     }
     const user = await User.create({username,password});
     res.status(StatusCodes.CREATED).json({user});
-}
+})
 
-const login = async(req,res) => {
+const login = catchAsync(async(req,res) => {
     const {username,password} = req.body;
     if(!username || !password){
         throw new customError.BadRequestError('Please provide the credentials');
@@ -28,6 +28,6 @@ const login = async(req,res) => {
         res.status(StatusCodes.OK).json({ msg: 'Successfully logged in' }); 
     }
 
-}
+});
 
 module.exports = {createUser,login};

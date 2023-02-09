@@ -1,12 +1,12 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
-const path = require('path');
 const app = express();
 const connectDB = require('./db/connect')
 const port = process.env.PORT || 5000;
 const applicantRouter = require('./routes/applicantRoutes');
 const userRouter = require('./routes/userRoutes');
+
 
 app.use(cors());
 app.use('/static', express.static("uploads"))

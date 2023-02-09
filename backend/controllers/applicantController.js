@@ -1,7 +1,7 @@
 const Applicant = require('../models/Applicant');
 const {StatusCodes} = require('http-status-codes')
 const customError = require('../errors');
-
+const catchAsync = require('../middlewares/catchAsync');
 
 //multer
 const multer = require('multer');  
@@ -32,14 +32,14 @@ const uploadSettings = upload.single('image');
 
 
 
-const createTranscript = async(req,res) => {
+const createTranscript = catchAsync(async(req,res) => {
     const {name,prn,YOS,branch,address,contactNo,copies,certificates,originals,photoCopies,universityDetails} = req.body;
     const fees = copies*700;
     const applicant = await Applicant.create({name,prn,YOS,branch,address,contactNo,copies,certificates,originals,photoCopies,universityDetails,fees});
     res.status(StatusCodes.CREATED).json({applicant});
-}
+});
 
-const uploadFile = async(req,res) => {
+const uploadFile = catchAsync(async(req,res) => {
     const file = req.file;
     if(!file){
         throw new customError.BadRequestError('Please provide a image');
@@ -55,6 +55,6 @@ const uploadFile = async(req,res) => {
     await applicant.save();
     res.status(StatusCodes.CREATED).json({ applicant })
 
-}
+});
 
 module.exports =  {createTranscript,uploadSettings,uploadFile}
