@@ -69,8 +69,8 @@ const Login = () => {
           <button type='submit' className='submitbtn'>
             Login
           </button>
-          <a href='' className='forgotpassword'>
-            Forgot Password?
+          <a href='' onClick={()=>{navigate('/home')}} className='forgotpassword'>
+            CONTINUE AS GUEST
           </a>
         </form>
       </div>
