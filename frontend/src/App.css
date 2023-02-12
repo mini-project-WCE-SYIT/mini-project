@@ -3,6 +3,15 @@ body {
   margin: 0;
 }
 
+:root {
+  background-color: #edf4fc;
+}
+
+input,
+button {
+  font-size: 1.1rem;
+}
+
 .login-form {
   width: 100%;
   height: 90vh;
@@ -111,15 +120,14 @@ body {
   font-size: medium;
   padding-left: 12px;
   padding-right: 12px;
-  padding-top:2px;
+  padding-top: 2px;
   border-radius: 10px;
-  padding-bottom:2px;
+  padding-bottom: 2px;
   background-color: black;
   border: 2px solid black;
   text-decoration: none;
   color: white;
 }
-
 
 .forgotpassword:hover {
   color: whitesmoke;
@@ -151,7 +159,6 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
-
 
 .procedure > h2 {
   padding-top: 1.5rem;
@@ -209,7 +216,217 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
+
+/* Form.js */
+.appForm {
+  width: 75vw;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  background-color: white;
+  margin: 2rem;
+}
+
+.upperDiv,
+.addressDiv,
+.certificateDiv,
+.originals,
+.sufficientCopies,
+.universityName {
+  margin: 2rem;
+}
+
+.upperDiv {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 1rem;
+  column-gap: 14rem;
+}
+
+.upperDivItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.upperDivItems > input {
+  margin-left: 1rem;
+  width: 46%;
+  padding: 0.3rem 0.7rem;
+  border: none;
+  box-shadow: 2px 2px 2px 2px #ccc;
+}
+.dropdownbranch > div,
+.dropdownYear > div {
+  width: 50%;
+}
+.dropdownYear-button,
+.dropdownBranch-button {
+  background-color: white;
+  color: rgb(81, 81, 81);
+  cursor: pointer;
+  text-align: left;
+  padding: 0.3rem 0.6rem 0.5rem 0.6rem;
+  border: none;
+  width: 100%;
+  box-shadow: inset -2px -2px 2px 2px #ccc;
+  z-index: 131;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdownYear-content,
+.dropdownBranch-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 15%;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdownYear-content button,
+.dropdownBranch-content button {
+  float: none;
+  color: black;
+  width: 100%;
+  padding: 12px 16px;
+  text-decoration: none;
+  border: none;
+  background-color: white;
+  display: block;
+  text-align: left;
+}
+.dropdownYear-content button:hover,
+.dropdownBranch-content button:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.certificatesOptions {
+  display: flex;
+  flex-direction: row;
+  margin: 0.7rem 0;
+}
+.certificatesOptions > div {
+  margin: 0 3rem;
+}
+input.Certificate {
+  height: 1.1rem;
+  width: 1.1rem;
+  margin-right: 0.4rem;
+}
+.addressDiv {
+  display: flex;
+  justify-content: space-between;
+}
+.addressDiv > input {
+  width: 81.5%;
+  padding: 0.3rem 0.7rem;
+  border: none;
+  margin-left: 1rem;
+  box-shadow: 2px 2px 2px 2px #ccc;
+}
+.addressDiv > label {
+  margin-right: 2rem;
+}
+.blueCircle {
+  height: 1.2rem;
+  width: 1.2rem;
+  margin-bottom: 0.1rem;
+  translate: 0 4px;
+  margin-right: 0.5rem;
+}
+.appFormSubmitBtn {
+  color: white;
+  background-color: #0317d1;
+  border: none;
+  padding: 0.5rem 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  transition: all 0.28s;
+  cursor: pointer;
+}
+.appFormSubmitBtn:hover {
+  box-shadow: 2px 4px 2px 2px #ccc;
+}
+.submitBtn {
+  display: flex;
+  justify-content: center;
+}
+
+.originals > label > input,
+.sufficientCopies > label > input,
+.universityName > label > input {
+  margin: 0 0.7rem 0 3rem;
+  height: 1rem;
+}
+.upperDivItems > input:focus,
+.addressDiv > input {
+  outline: none;
+}
+@media only screen and (max-width: 1540px) {
+  .upperDivItems > input {
+    width: 100%;
+  }
+  .dropdownbranch > div,
+  .dropdownYear > div {
+    width: 100%;
+  }
+  .dropdownBranch-button,
+  .dropdownYear-button {
+    margin-left: 1rem;
+  }
+  .dropdownYear-content,
+  .dropdownBranch-content {
+    width: 25%;
+    margin-left: 1rem;
+  }
+
+  .upperDivItems > div {
+    margin-bottom: 0.4rem;
+  }
+  .certificatesOptions > div {
+    margin: 0rem 1rem 0rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 1180px) {
+  .upperDiv {
+    grid-template-columns: auto;
+    column-gap: 0;
+  }
+  .upperDivItems {
+    flex-direction: column;
+  }
+  .upperDivItems > input {
+    width: 90%;
+  }
+  .certificatesOptions {
+    flex-direction: column;
+  }
+  .addressDiv {
+    flex-direction: column;
+  }
+  .addressDiv > input {
+    width: 90%;
+  }
+  .addressDiv > div {
+    margin-bottom: 0.5rem;
+  }
+  .dropdownYear > div > button,
+  .dropdownbranch > div > button {
+    width: 95%;
+  }
+  .dropdownYear-content,
+  .dropdownBranch-content {
+    width: 50%;
+  }
+}
 @media only screen and (max-width: 680px) {
+  * {
+    font-size: 1.06rem;
+  }
   .btns > div {
     display: none;
   }
@@ -254,6 +471,10 @@ body {
 }
 
 @media only screen and (max-width: 485px) {
+  * {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
   .form {
     width: 13rem;
   }
@@ -265,5 +486,17 @@ body {
   }
   .innerDiv > input {
     width: 90%;
+  }
+  .appForm {
+    padding: 1rem 1rem 1rem 0rem;
+  }
+  .dropdownbranch {
+    width: 100%;
+  }
+  .originals > label > input,
+  .sufficientCopies > label > input,
+  .universityName > label > input {
+    margin: 0 0.7rem 0 1rem;
+    height: 1rem;
   }
 }
