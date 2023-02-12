@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useNavigate } from "react-router-dom";
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 import './index.css'
 // import axios from 'axios'
 
@@ -9,30 +9,29 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const URL = 'https://wce-transcript-backend.onrender.com/api/v1/user/login'
   const [error, setError] = useState('')
-  const data = {username,password};
-  const navigate = useNavigate();
-  
-  const fetchData = async(URL) =>{
-    try{
+  const data = { username, password }
+  const navigate = useNavigate()
+
+  const fetchData = async (URL) => {
+    try {
       await axios({
         method: 'POST',
         url: URL,
-        data
+        data,
       }).then((res) => {
         console.log(res.data)
-        setError(res.data.msg);
+        setError(res.data.msg)
         navigate('/home')
-      });
-    }catch(err){
-      console.log(err);
+      })
+    } catch (err) {
+      console.log(err)
       setError('Incorrect username or password')
     }
-
   }
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(username,password);
-    fetchData(URL);
+    console.log(username, password)
+    fetchData(URL)
   }
   return (
     <>
@@ -69,7 +68,13 @@ const Login = () => {
           <button type='submit' className='submitbtn'>
             Login
           </button>
-          <a href='' onClick={()=>{navigate('/home')}} className='forgotpassword'>
+          <a
+            href=''
+            onClick={() => {
+              navigate('/home')
+            }}
+            className='forgotpassword'
+          >
             CONTINUE AS GUEST
           </a>
         </form>
