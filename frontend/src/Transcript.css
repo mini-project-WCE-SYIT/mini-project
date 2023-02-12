@@ -1,0 +1,81 @@
+.header{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#clg-name{
+    font-weight: bold;
+}
+.header-content{
+    font-weight: 500;
+    margin-top: -20px;
+}
+
+@media screen and (max-width: 768px) {
+    .header-content{
+        line-height: 1rem;
+        margin-top: -10px;
+        font-size: small;
+    }
+    #clg-name{
+        font-size: medium;
+    }
+    #clg-web{
+        margin-top: -20px;
+    }
+}
+
+
+.clg-details{
+    padding-top: 0;
+    height: 2rem;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+    .clg-details{
+        font-size: small;
+    }
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    text-decoration: underline;
+    justify-content: center;
+}
+
+.student-details{
+    display: flex;
+    font-size: medium;
+    flex-direction: column;
+    margin-left: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+    .student-details{
+        font-size: small;
+        margin-left: 1rem;
+    }
+    .content{
+        font-size: medium;
+    }
+}
+
+td{
+    width: 10rem;
+    font-size: medium;
+    text-align: center;
+}
+
+.hours-per-week{
+    text-align: center;
+    width: 5rem;
+}

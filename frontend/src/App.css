@@ -153,6 +153,7 @@ body {
 }
 
 
+
 .procedure > h2 {
   padding-top: 1.5rem;
   margin-top: 1rem;
@@ -266,4 +267,9 @@ body {
   .innerDiv > input {
     width: 90%;
   }
+}
+
+.table-heading{
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
