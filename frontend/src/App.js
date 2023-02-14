@@ -6,14 +6,15 @@ import Form from './Form'
 
 function App() {
   return (
-      <BrowserRouter>
+    <BrowserRouter>
       <Routes>
-        <Route exact path='/' element={ <Login />}/>
-        <Route exact path="/home" element={<Procedure/>}/>
-        <Route exact path="/form" element={<Form/>}/>
+        <Route exact path='/' element={<Login />} />
+        <Route exact path='/home' element={<Procedure />} />
+        <Route exact path='/form' element={<Form />} />
       </Routes>
-      </BrowserRouter>
-      // <TranscriptPg2/>
+    </BrowserRouter>
+    // <TranscriptPg2/>
+    //swara
   )
 }
 export default App
