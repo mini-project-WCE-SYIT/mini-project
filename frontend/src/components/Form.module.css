@@ -1,0 +1,302 @@
+body {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+:root {
+  background-color: #edf4fc;
+}
+
+/* Styling for Form.js */
+.applicationform {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #edf4fc;
+}
+
+.applicationform > h2 {
+  font-weight: 500;
+  line-height: 1.5rem;
+  margin: 2rem;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.appForm {
+  width: 75vw;
+  padding: 2rem 3rem;
+  border-radius: 1rem;
+  background-color: white;
+  margin: 2rem;
+}
+
+.upperDiv,
+.addressDiv,
+.certificateDiv,
+.originals,
+.sufficientCopies,
+.universityName {
+  margin: 2rem;
+}
+
+.upperDiv {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 1rem;
+  column-gap: 14rem;
+}
+
+.upperDivItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.upperDivItems > input {
+  margin-left: 1rem;
+  width: 46%;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.7rem;
+  border: none;
+  box-shadow: 2px 2px 2px 2px #ccc;
+  height: 1.6rem;
+}
+
+.dropdownbranch > div,
+.dropdownYear > div {
+  width: 50%;
+  height: 1.6rem;
+}
+
+.dropdownYearbutton,
+.dropdownBranchbutton {
+  background-color: white;
+  color: rgb(81, 81, 81);
+  cursor: pointer;
+  text-align: left;
+  padding: 0.3rem 0.6rem 0.5rem 0.6rem;
+  border: none;
+  width: 100%;
+  box-shadow: 2px 2px 2px 2px #ccc;
+  display: flex;
+  justify-content: space-between;
+}
+
+.certificatesOptions {
+  display: flex;
+  flex-direction: row;
+  margin: 1.1rem 0;
+}
+
+.certificatesOptions > div {
+  margin: 0 3rem;
+}
+
+input.Certificate {
+  height: 1.1rem;
+  width: 1.1rem;
+  margin-right: 0.4rem;
+}
+
+.addressDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.addressDiv > input {
+  width: 79%;
+  height: 1.6rem;
+  font-size: 1.1rem;
+  padding: 0.3rem 0.7rem;
+  border: none;
+  margin-left: 1rem;
+  box-shadow: 2px 2px 2px 2px #ccc;
+}
+
+.addressDiv > label {
+  margin-right: 2rem;
+}
+
+.blueCircle {
+  height: 1.2rem;
+  width: 1.2rem;
+  margin-bottom: 0.1rem;
+  translate: 0 4px;
+  margin-right: 0.5rem;
+}
+
+.appFormSubmitBtn {
+  color: white;
+  background-image: linear-gradient(to right, #010bc2, #0800ff);
+  border: none;
+  padding: 0.5rem 2.5rem;
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+  transition: all 0.28s;
+  cursor: pointer;
+}
+
+.appFormSubmitBtn:hover {
+  box-shadow: 2px 4px 2px 2px #ccc;
+}
+
+.submitBtn {
+  display: flex;
+  justify-content: center;
+}
+
+.originals > label > input,
+.sufficientCopies > label > input,
+.universityName > label > input {
+  margin: 0 0.7rem 0 3rem;
+  height: 1rem;
+}
+
+.upperDivItems > input:focus,
+.addressDiv > input {
+  outline: none;
+}
+
+select,
+option {
+  font-size: 1.1rem;
+  color: rgb(100, 100, 100);
+}
+
+select:focus {
+  outline: none;
+}
+
+@media only screen and (max-width: 1540px) {
+  .upperDivItems > input {
+    width: 100%;
+  }
+  .dropdownbranch > div,
+  .dropdownYear > div {
+    width: 95%;
+  }
+  .dropdownBranchbutton,
+  .dropdownYearbutton {
+    margin-left: 1rem;
+  }
+  .upperDivItems > div {
+    margin-bottom: 0.4rem;
+  }
+  .certificatesOptions > div {
+    margin: 0rem 1rem 0rem 1rem;
+  }
+}
+
+@media only screen and (max-width: 1180px) {
+  * {
+    line-height: 1.25rem;
+  }
+  .upperDiv {
+    grid-template-columns: auto;
+    column-gap: 0;
+  }
+  .upperDivItems {
+    flex-direction: column;
+  }
+  .upperDivItems > input {
+    width: 61vw;
+  }
+  .dropdownbranch,
+  .dropdownYear {
+    width: 94%;
+  }
+
+  .dropdownBranchbutton,
+  .dropdownYearbutton {
+    width: 64vw;
+  }
+  .certificatesOptions {
+    flex-direction: column;
+  }
+  .addressDiv {
+    flex-direction: column;
+  }
+  .addressDiv > input {
+    width: 61vw;
+  }
+  .addressDiv > div {
+    margin-bottom: 0.5rem;
+  }
+  .applicationform > h2 {
+    font-size: 1.5rem;
+    margin: 1rem;
+    margin-top: 3rem;
+  }
+  .upperDiv,
+  .addressDiv,
+  .certificateDiv,
+  .originals,
+  .sufficientCopies,
+  .universityName {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 485px) {
+  * {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+  .appForm {
+    padding: 0.5rem 1rem 1.5rem 0rem;
+    width: 90vw;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .dropdownbranch,
+  .dropdownYear {
+    width: 100%;
+  }
+  .upperDivItems > input {
+    width: 63vw;
+  }
+  .upperDiv > label {
+    width: 60vw;
+  }
+  .addressDiv > input {
+    width: 63vw;
+  }
+  .dropdownBranchbutton,
+  .dropdownYearbutton {
+    width: 68vw;
+  }
+  .originals > label > input,
+  .sufficientCopies > label > input,
+  .universityName > label > input {
+    margin: 0 0.7rem 0 1rem;
+    height: 1rem;
+  }
+  .applicationform > h2 {
+    font-size: 1.3rem;
+    margin: 1rem;
+    margin-top: 3rem;
+  }
+  .upperDiv,
+  .addressDiv,
+  .certificateDiv,
+  .originals,
+  .sufficientCopies,
+  .universityName {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+/* 
+@media only screen and (max-width: 1540px) {
+
+}
+
+@media only screen and (max-width: 1180px) {
+  
+}
+*/

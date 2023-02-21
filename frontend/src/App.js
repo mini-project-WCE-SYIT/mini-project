@@ -1,8 +1,9 @@
 import './App.css'
+import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Login from './Login'
-import Procedure from './Procedure'
-import Form from './Form'
+import Login from './components/Login'
+import Procedure from './components/Procedure'
+import Form from './components/Form'
 
 function App() {
   return (
@@ -14,7 +15,6 @@ function App() {
       </Routes>
     </BrowserRouter>
     // <TranscriptPg2/>
-    //swara
   )
 }
 export default App

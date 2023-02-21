@@ -1,14 +1,13 @@
-import ReactDom from 'react-dom'
-import './index.css'
 import React from 'react'
+import procedure from './Procedure.module.css'
 // import axios from 'axios'
 
 const Procedure = () => {
   return (
     <>
-      <div className='procedure'>
+      <div className={procedure.procedure}>
         <h2>PROCEDURE TO OBTAIN TRANSCRIPT</h2>
-        <div className='DOCUMENTS'>
+        <div className={procedure.documents}>
           <ol>
             <li>
               Candidate needs to submit filled application along with required
@@ -31,7 +30,7 @@ const Procedure = () => {
           </ol>
         </div>
         <h2>DOCUMENTS FOR THE TRANSCRIPT</h2>
-        <div className='DOCUMENTS'>
+        <div className={procedure.documents}>
           <ol>
             <li>
               The students should bring the original Degree
@@ -67,13 +66,13 @@ const Procedure = () => {
             <b> MICR</b>:416013154. <br />
           </p>
         </div>
-        <div className='btns'>
+        <div className={procedure.btns}>
           <div>
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
           </div>
-          <button className='proceed'>Proceed</button>
-          <a href='transcript download.pdf' className='download'>
+          <button className={procedure.proceed}>Proceed</button>
+          <a href='transcript download.pdf' className={procedure.download}>
             Download as pdf
           </a>
         </div>
