@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
+import login from './Login.module.css'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
-import './index.css'
-// import axios from 'axios'
 
 const Login = () => {
   const [username, setUsername] = useState('')
@@ -28,22 +27,24 @@ const Login = () => {
       setError('Incorrect username or password')
     }
   }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(username, password)
     fetchData(URL)
   }
+
   return (
     <>
       <Webheader />
-      <div className='login-form'>
+      <div className={login.loginform}>
         <h2>Welcome to Transcript Portal</h2>
-        <form onSubmit={handleSubmit} className='form'>
+        <form onSubmit={handleSubmit} className={login.form}>
           <h2 style={{ textAlign: 'center', marginBlockStart: '0rem' }}>
             Sign in
           </h2>
           {error && <p className='error'>{error}</p>}
-          <div className='innerDiv'>
+          <div className={login.innerDiv}>
             <label htmlFor='username'>Username*</label>
             <input
               type='text'
@@ -54,7 +55,7 @@ const Login = () => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-          <div className='innerDiv'>
+          <div className={login.innerDiv}>
             <label htmlFor='password'>Password*</label>
             <input
               type='password'
@@ -65,7 +66,7 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button type='submit' className='submitbtn'>
+          <button type='submit' className={login.submitbtn}>
             Login
           </button>
           <a
@@ -73,9 +74,9 @@ const Login = () => {
             onClick={() => {
               navigate('/home')
             }}
-            className='forgotpassword'
+            className={login.continueasguest}
           >
-            CONTINUE AS GUEST
+            Continue as guest
           </a>
         </form>
       </div>
@@ -85,12 +86,8 @@ const Login = () => {
 
 const Webheader = () => {
   return (
-    <div className='head'>
-      <img
-        src={process.env.PUBLIC_URL + '/wcelogo.png'}
-        alt='mypic'
-        className='logo'
-      />
+    <div className={login.head}>
+      <img src={'/wcelogo.png'} alt='mypic' className={login.logo} />
       <h1>Walchand College of Engineering, Sangli</h1>
     </div>
   )

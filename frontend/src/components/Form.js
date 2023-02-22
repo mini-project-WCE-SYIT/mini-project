@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-
+import React, { useState } from 'react'
+import form from './Form.module.css'
 const Form = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -15,15 +15,10 @@ const Form = () => {
       certificate3: false,
     },
   })
+
   const [option1, setOption1] = useState('')
   const [option2, setOption2] = useState('')
   const [option3, setOption3] = useState('')
-  const [isOpenYear, setIsOpenYear] = useState(false)
-  const toggleYear = () => setIsOpenYear(!isOpenYear)
-  const [DropdownYear, setDropdownYear] = useState('Choose your year')
-  const [isOpenBranch, setIsOpenBranch] = useState(false)
-  const toggleBranch = () => setIsOpenBranch(!isOpenBranch)
-  const [DropdownBranch, setDropdownBranch] = useState('Choose your branch')
 
   const handleInputChange = (e) => {
     if (e.target.type === 'checkbox') {
@@ -41,44 +36,23 @@ const Form = () => {
       })
     }
   }
-  const handleOutsideClick = (event) => {
-    if (isOpenYear && !event.target.closest('.dropdown')) {
-      setIsOpenYear(false)
-      setIsOpenBranch(false)
-    }
-  }
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(formData)
   }
-  useEffect(() => {
-    document.addEventListener('click', handleOutsideClick)
-    return () => {
-      document.removeEventListener('click', handleOutsideClick)
-    }
-  }, [])
 
   return (
     <>
-      <div className='login-form'>
-        <h2
-          style={{
-            fontWeight: '500',
-            lineHeight: '1.5rem',
-            margin: '2rem',
-            marginTop: '4rem',
-          }}
-        >
-          Application for the issue of transcript
-        </h2>
-        <form onSubmit={handleSubmit} className='appForm'>
-          <div className='upperDiv'>
-            <div className='upperDivItems'>
+      <div className={form.applicationform}>
+        <h2>Application for the issue of transcript</h2>
+        <form onSubmit={handleSubmit} className={form.appForm}>
+          <div className={form.upperDiv}>
+            <div className={form.upperDivItems}>
               <div>
                 <img
-                  src={process.env.PUBLIC_URL + '/Blue_circle.png'}
+                  src={'/Blue_circle.png'}
                   alt='circle'
-                  className='blueCircle'
+                  className={form.blueCircle}
                 />
                 <label htmlFor='name'>Name:</label>
               </div>
@@ -91,60 +65,41 @@ const Form = () => {
                 onChange={handleInputChange}
               />
             </div>
-            <div className='upperDivItems dropdownYear'>
+            <div className={`${form.upperDivItems} ${form.dropdownYear}`}>
               <div>
                 <img
-                  src={process.env.PUBLIC_URL + '/Blue_circle.png'}
+                  src={'/Blue_circle.png'}
                   alt='circle'
-                  className='blueCircle'
+                  className={form.blueCircle}
                 />
                 <label htmlFor='year'>Year of Study:</label>
               </div>
               <div>
-                <button onClick={toggleYear} className='dropdownYear-button'>
-                  {DropdownYear}{' '}
-                  <img
-                    src={process.env.PUBLIC_URL + '/dropdown.png'}
-                    alt=''
-                    className='blueCircle'
-                  />
-                </button>
-                {isOpenYear && (
-                  <div className='dropdownYear-content'>
-                    <button
-                      name='FirstYear'
-                      onClick={() => setDropdownYear('First Year')}
-                    >
-                      First Year
-                    </button>
-                    <button
-                      name='SecondYear'
-                      onClick={() => setDropdownYear('Second Year')}
-                    >
-                      Second Year
-                    </button>
-                    <button
-                      name='ThirdYear'
-                      onClick={() => setDropdownYear('Third Year')}
-                    >
-                      Third Year
-                    </button>
-                    <button
-                      name='LastYear'
-                      onClick={() => setDropdownYear('Last Year')}
-                    >
-                      Last Year
-                    </button>
-                  </div>
-                )}
+                <select name='' id='' className={`${form.dropdownYearbutton} `}>
+                  <option value='none' selected disabled hidden>
+                    Select your year of study
+                  </option>
+                  <option value='fy' name='fy'>
+                    First Year
+                  </option>
+                  <option value='sy' name='sy'>
+                    Second Year
+                  </option>
+                  <option value='ty' name='ty'>
+                    Third Year
+                  </option>
+                  <option value='ly' name='ly'>
+                    Last Year
+                  </option>
+                </select>
               </div>
             </div>
-            <div className='upperDivItems'>
+            <div className={form.upperDivItems}>
               <div>
                 <img
-                  src={process.env.PUBLIC_URL + '/Blue_circle.png'}
+                  src={'/Blue_circle.png'}
                   alt='circle'
-                  className='blueCircle'
+                  className={form.blueCircle}
                 />
                 <label htmlFor='prn'>PRN:</label>
               </div>
@@ -157,12 +112,12 @@ const Form = () => {
                 onChange={handleInputChange}
               />
             </div>
-            <div className='upperDivItems'>
+            <div className={form.upperDivItems}>
               <div>
                 <img
-                  src={process.env.PUBLIC_URL + '/Blue_circle.png'}
+                  src={'/Blue_circle.png'}
                   alt='circle'
-                  className='blueCircle'
+                  className={form.blueCircle}
                 />
                 <label htmlFor='contact'>Contact Number:</label>
               </div>
@@ -175,77 +130,51 @@ const Form = () => {
                 onChange={handleInputChange}
               />
             </div>
-            <div className='upperDivItems dropdownbranch'>
+            <div className={`${form.upperDivItems} ${form.dropdownbranch}`}>
               <div>
                 <img
-                  src={process.env.PUBLIC_URL + '/Blue_circle.png'}
+                  src={'/Blue_circle.png'}
                   alt='circle'
-                  className='blueCircle'
+                  className={form.blueCircle}
                 />
                 <label htmlFor='branch'>Branch:</label>
               </div>
               <div>
-                <button
-                  onClick={toggleBranch}
-                  className='dropdownBranch-button'
+                <select
+                  name='Branch'
+                  id=''
+                  className={form.dropdownBranchbutton}
                 >
-                  {DropdownBranch}{' '}
-                  <img
-                    src={process.env.PUBLIC_URL + '/dropdown.png'}
-                    alt=''
-                    className='blueCircle'
-                  />
-                </button>
-                {isOpenBranch && (
-                  <div className='dropdownBranch-content'>
-                    <button
-                      name='cse'
-                      onClick={() => setDropdownBranch('Computer Science')}
-                    >
-                      Computer Science
-                    </button>
-                    <button
-                      name='it'
-                      onClick={() =>
-                        setDropdownBranch('Information Technology')
-                      }
-                    >
-                      Information Technology
-                    </button>
-                    <button
-                      name='electronics'
-                      onClick={() => setDropdownBranch('Electronics')}
-                    >
-                      Electronics
-                    </button>
-                    <button
-                      name='electrical'
-                      onClick={() => setDropdownBranch('Electrical')}
-                    >
-                      Electrical
-                    </button>
-                    <button
-                      name='mechanical'
-                      onClick={() => setDropdownBranch('Mechanical')}
-                    >
-                      Mechanical
-                    </button>
-                    <button
-                      name='civil'
-                      onClick={() => setDropdownBranch('Civil')}
-                    >
-                      Civil
-                    </button>
-                  </div>
-                )}
+                  <option value='none' selected disabled hidden>
+                    Select your branch
+                  </option>
+                  <option value='cse' name='cse'>
+                    Computer Science
+                  </option>
+                  <option value='it' name='it'>
+                    Information Technology
+                  </option>
+                  <option value='electronics' name='electronics'>
+                    Electronics
+                  </option>
+                  <option value='electrical' name='electrical'>
+                    Electrical
+                  </option>
+                  <option value='mechanics' name='mechanics'>
+                    Mechanics
+                  </option>
+                  <option value='civil' name='civil'>
+                    Civil
+                  </option>
+                </select>
               </div>
             </div>
-            <div className='upperDivItems'>
+            <div className={form.upperDivItems}>
               <div>
                 <img
-                  src={process.env.PUBLIC_URL + '/Blue_circle.png'}
+                  src={'/Blue_circle.png'}
                   alt='circle'
-                  className='blueCircle'
+                  className={form.blueCircle}
                 />
                 <label htmlFor='copies'>No. of Copies:</label>
               </div>
@@ -259,12 +188,12 @@ const Form = () => {
               />
             </div>
           </div>
-          <div className='addressDiv'>
+          <div className={form.addressDiv}>
             <div>
               <img
-                src={process.env.PUBLIC_URL + '/Blue_circle.png'}
+                src={'/Blue_circle.png'}
                 alt='circle'
-                className='blueCircle'
+                className={form.blueCircle}
               />
               <label htmlFor='address'>Address:</label>
             </div>
@@ -277,20 +206,20 @@ const Form = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div className='certificateDiv'>
+          <div className={form.certificateDiv}>
             <div>
               <img
-                src={process.env.PUBLIC_URL + '/Blue_circle.png'}
+                src={'/Blue_circle.png'}
                 alt='circle'
-                className='blueCircle'
+                className={form.blueCircle}
               />
               Certificates for which transcripts are reqired:{' '}
             </div>
-            <div className='certificatesOptions'>
+            <div className={form.certificatesOptions}>
               <div>
                 <input
                   type='checkbox'
-                  className='Certificate'
+                  className={form.Certificate}
                   id='certificate1'
                   name='certificate1'
                   checked={formData.certificates.certificate1}
@@ -301,7 +230,7 @@ const Form = () => {
               <div>
                 <input
                   type='checkbox'
-                  className='Certificate'
+                  className={form.Certificate}
                   id='certificate2'
                   name='certificate2'
                   checked={formData.certificates.certificate2}
@@ -312,7 +241,7 @@ const Form = () => {
               <div>
                 <input
                   type='checkbox'
-                  className='Certificate'
+                  className={form.Certificate}
                   id='certificate3'
                   name='certificate3'
                   checked={formData.certificates.certificate3}
@@ -322,13 +251,13 @@ const Form = () => {
               </div>
             </div>
           </div>
-          <div className='originals'>
+          <div className={form.originals}>
             <label>
               <div>
                 <img
-                  src={process.env.PUBLIC_URL + '/Blue_circle.png'}
+                  src={'/Blue_circle.png'}
                   alt='circle'
-                  className='blueCircle'
+                  className={form.blueCircle}
                 />
                 Whether originals of the above certificates are produced:
               </div>
@@ -350,13 +279,13 @@ const Form = () => {
               No
             </label>
           </div>
-          <div className='sufficientCopies'>
+          <div className={form.sufficientCopies}>
             <label>
               <div>
                 <img
-                  src={process.env.PUBLIC_URL + '/Blue_circle.png'}
+                  src={'/Blue_circle.png'}
                   alt='circle'
-                  className='blueCircle'
+                  className={form.blueCircle}
                 />
                 Whether sufficient photocopies are produced:
               </div>
@@ -378,13 +307,13 @@ const Form = () => {
               No
             </label>
           </div>
-          <div className='universityName'>
+          <div className={form.universityName}>
             <label>
               <div>
                 <img
-                  src={process.env.PUBLIC_URL + '/Blue_circle.png'}
+                  src={'/Blue_circle.png'}
                   alt='circle'
-                  className='blueCircle'
+                  className={form.blueCircle}
                 />
                 Whether sufficient photocopies are produced:
               </div>
@@ -406,9 +335,9 @@ const Form = () => {
               No
             </label>
           </div>
-          <div className='submitBtn'>
-            <button type='submit' className='appFormSubmitBtn'>
-              Submit
+          <div className={form.submitBtn}>
+            <button type='submit' className={form.appFormSubmitBtn}>
+              Next
             </button>
           </div>
         </form>
