@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import form from './Form.module.css'
+import { useNavigate } from 'react-router-dom'
 const Form = () => {
+  const navigate = useNavigate()
+
   const [formData, setFormData] = useState({
     name: '',
     prn: '',
@@ -336,7 +339,13 @@ const Form = () => {
             </label>
           </div>
           <div className={form.submitBtn}>
-            <button type='submit' className={form.appFormSubmitBtn}>
+            <button
+              type='submit'
+              className={form.appFormSubmitBtn}
+              onClick={() => {
+                navigate('/fileupload')
+              }}
+            >
               Next
             </button>
           </div>

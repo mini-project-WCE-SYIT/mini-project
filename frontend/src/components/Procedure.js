@@ -1,8 +1,10 @@
 import React from 'react'
 import procedure from './Procedure.module.css'
+import { useNavigate } from 'react-router-dom'
 // import axios from 'axios'
 
 const Procedure = () => {
+  const navigate = useNavigate()
   return (
     <>
       <div className={procedure.procedure}>
@@ -71,8 +73,19 @@ const Procedure = () => {
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
           </div>
-          <button className={procedure.proceed}>Proceed</button>
-          <a href='transcript download.pdf' className={procedure.download}>
+          <button
+            className={procedure.proceed}
+            onClick={() => {
+              navigate('/form')
+            }}
+          >
+            Proceed
+          </button>
+          <a
+            href='transcript download.pdf'
+            className={procedure.download}
+            target='_blank'
+          >
             Download as pdf
           </a>
         </div>
